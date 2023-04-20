@@ -12,7 +12,7 @@ const colorNames = [
   'PapayaWhip',
   'MistyRose',
 ];
-
+//add commit
 const App = () => {
   const [color, setColor] = useState('red');
   const divStyle = {
