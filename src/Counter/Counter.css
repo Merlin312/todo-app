@@ -1,0 +1,46 @@
+.btn {
+  font-size: 2em;
+  margin: 0.4em;
+  padding: 0.2em;
+  width: 7em;
+  border-radius: 3em;
+  border: none;
+  background-color: #342b72;
+}
+.title {
+  font-size: 3em;
+  font-weight: bold;
+  border-radius: 2em;
+  text-shadow: 0 0 0.2em #fff, 0 0 0.2em #fff, 0 0 0.2em #fff, 0 0 0.2em #3104d5;
+  background: linear-gradient(270deg, #5d54a4, #0b093b);
+  margin: 0 auto;
+  width: 3em;
+}
+
+.btn:hover {
+  filter: drop-shadow(0 0 0.3em #3104d5aa);
+  background: linear-gradient(270deg, #5d54a4, #6a679e);
+  transform: scale(1.1);
+}
+.danger {
+  background: linear-gradient(70deg, #78401a, #d53c00);
+  width: 2.5em;
+}
+.danger:hover {
+  background: linear-gradient(70deg, #6a2b02, #e78711);
+}
+.card {
+  text-align: center;
+}
+
+.inp {
+  font-size: 2em;
+  padding: 0.2em 0.5em;
+  border-radius: 1em;
+  border: none;
+  background-color: #342b72;
+  color: #fff;
+  text-align: center;
+  margin: 0.4em;
+  width: 5em;
+}
