@@ -7,27 +7,26 @@ const Todos = () => {
   const handleChange = (event) => {
     setInputValue(event.target.value);
   };
-  const handleSubmit = () => {
+  const handleAddTodos = () => {
     setTodos([...todos, inputValue]);
     setInputValue('');
   };
-
-  const handleDelete = (deleteIndex) => {
-    const deleteTodo = [...todos];
-    deleteTodo.splice(deleteIndex, 1);
-    setTodos(deleteTodo);
+  const handelRemove = (indexRemove) => {
+    const removeValue = [...todos];
+    removeValue.splice(indexRemove, 1);
+    setTodos(removeValue);
   };
   return (
     <div>
-      <input value={inputValue} placeholder="write.." onChange={handleChange} />
-      <button onClick={handleSubmit}>Submit</button>
-      <h1>Todos: </h1>
+      <input value={inputValue} onChange={handleChange} />
+      <button onClick={handleAddTodos}>Add</button>
+      <h1>Todos:</h1>
       <ul>
-        {todos.map((el, i) => {
+        {todos.map((todo, index) => {
           return (
-            <li key={i}>
-              {el}
-              <button onClick={() => handleDelete(i)}>Delete</button>
+            <li key={index}>
+              {todo}
+              <button onClick={() => handelRemove(index)}>X</button>
             </li>
           );
         })}
