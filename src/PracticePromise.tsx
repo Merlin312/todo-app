@@ -1,20 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 const PracticePromise = () => {
   const [array, setArray] = useState([]);
 
-  // useEffect,resolve, reject, then, catch
-
   useEffect(() => {
-    const myPromise = new Promise((resolve, reject) => {
-      const array = [4, 5, 2, 886, 3, 1, 8];
+    const practicePromise = new Promise((resolve, reject) => {
+      const array = [44, 5, 2, 5, 64];
       if (array.length > 0) {
         resolve(array);
       } else {
-        reject('маси порожній');
+        reject('Масив пустий');
       }
     });
-    myPromise
+    practicePromise
       .then((result) => {
         setArray(result);
       })
@@ -22,14 +21,10 @@ const PracticePromise = () => {
         console.log(error);
       });
   }, []);
-
-  setInterval(() => {
-    console.clear();
-  }, 30000);
   return (
     <div>
       {array.map((item, index) => (
-        <p key={index}>{item * 10}</p>
+        <li key={index}>{item}</li>
       ))}
     </div>
   );
