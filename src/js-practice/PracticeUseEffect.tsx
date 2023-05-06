@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const PracticeUseEffect = (props) => {
-  const [title, setTitle] = useState('Початкова назва...');
+  const [title, setTitle] = useState('Початкова назва');
 
   useEffect(() => {
     document.title = title;
@@ -11,8 +11,7 @@ const PracticeUseEffect = (props) => {
   return (
     <div>
       <h1>{title}</h1>
-      <p>{props.newTitle}</p>
-      <button onClick={() => setTitle('New title..')}>Change titile</button>
+      <button onClick={() => setTitle(props.newTitle)}>Change titile</button>
     </div>
   );
 };

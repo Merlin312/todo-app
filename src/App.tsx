@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import './App.css';
-import PracticeUseEffect from './js-practice/practiceUseEffect';
+import PracticePromise from './PracticePromise';
 
 const App = () => {
   const newTitle = 'I love this...';
   return (
     <div>
-      <PracticeUseEffect newTitle={newTitle} />
+      <PracticePromise />
     </div>
   );
 };
