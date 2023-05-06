@@ -1,17 +1,12 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import PracticeUseEffect from './js-practice/practiceUseEffect';
 
 const App = () => {
-  const [title, setTitle] = useState('Початкова назва');
-
-  useEffect(() => {
-    document.title = title;
-  }, [title]);
-
+  const newTitle = 'I love this...';
   return (
     <div>
-      <h1>{title}</h1>
-      <button onClick={() => setTitle('New title')}>Change titile</button>
+      <PracticeUseEffect newTitle={newTitle} />
     </div>
   );
 };
