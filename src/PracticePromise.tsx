@@ -3,16 +3,17 @@ import { useState, useEffect } from 'react';
 const PracticePromise = () => {
   const [array, setArray] = useState([]);
 
+  // useEffect,resolve, reject, then, catch
+
   useEffect(() => {
     const myPromise = new Promise((resolve, reject) => {
-      const array = [1, 2, 3, 4, 5];
+      const array = [4, 5, 2, 886, 3, 1, 8];
       if (array.length > 0) {
         resolve(array);
       } else {
-        reject('Масив порожній');
+        reject('маси порожній');
       }
     });
-
     myPromise
       .then((result) => {
         setArray(result);
@@ -22,10 +23,13 @@ const PracticePromise = () => {
       });
   }, []);
 
+  setInterval(() => {
+    console.clear();
+  }, 30000);
   return (
     <div>
-      {array.map((item) => (
-        <p>{item}</p>
+      {array.map((item, index) => (
+        <p key={index}>{item * 10}</p>
       ))}
     </div>
   );
