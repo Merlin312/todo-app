@@ -1,19 +1,17 @@
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const PracticePromise = () => {
   const [array, setArray] = useState([]);
-
   useEffect(() => {
-    const practicePromise = new Promise((resolve, reject) => {
-      const array = [44, 5, 2, 5, 64];
-      if (array.length > 0) {
-        resolve(array);
+    const newPromise = new Promise((resolve, reject) => {
+      const arr = [4, 3, 64, 23, 88, 102];
+      if (arr.length > 0) {
+        resolve(arr);
       } else {
-        reject('Масив пустий');
+        reject('the array is empty');
       }
     });
-    practicePromise
+    newPromise
       .then((result) => {
         setArray(result);
       })
