@@ -19,16 +19,16 @@ const UserList = () => {
       <thead>
         <tr>
           <th>#</th>
-          <th>Name</th>
-          <th>Email</th>
+          <th>Website</th>
+          <th>Phone</th>
         </tr>
       </thead>
       <tbody>
         {users.map((user) => (
           <tr key={user.id}>
             <td>{user.id}</td>
-            <td>{user.name}</td>
-            <td>{user.email}</td>
+            <td>{user.website}</td>
+            <td>{user.phone}</td>
           </tr>
         ))}
       </tbody>
