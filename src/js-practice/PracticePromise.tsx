@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 
-const PracticePromise = () => {
   const [array, setArray] = useState([]);
   useEffect(() => {
     const myPromise = new Promise((resolve, reject) => {
