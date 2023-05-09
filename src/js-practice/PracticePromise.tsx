@@ -3,15 +3,15 @@ import { useEffect, useState } from 'react';
 const PracticePromise = () => {
   const [array, setArray] = useState([]);
   useEffect(() => {
-    const newPromise = new Promise((resolve, reject) => {
-      const arr = [4, 3, 64, 23, 88, 102];
+    const myPromise = new Promise((resolve, reject) => {
+      const arr = [3, 5, 2, 2, 5, 52, 24, 1];
       if (arr.length > 0) {
         resolve(arr);
       } else {
         reject('the array is empty');
       }
     });
-    newPromise
+    myPromise
       .then((result) => {
         setArray(result);
       })
@@ -19,6 +19,7 @@ const PracticePromise = () => {
         console.log(error);
       });
   }, []);
+
   return (
     <div>
       {array.map((item, index) => (
