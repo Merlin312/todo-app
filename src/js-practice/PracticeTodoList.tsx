@@ -5,13 +5,22 @@ const PracticeTodoList = () => {
   const [value, setValue] = useState('');
 
   const handleAddTodo = () => {
-    setTodos([...todos, value]);
+    const todoItem = {
+      text: value.trim(),
+      completed: false,
+    };
+    setTodos([...todos, todoItem]);
     setValue('');
   };
 
   const handleDeleteTodo = (index) => {
     const filterTodo = todos.filter((_, i) => i !== index);
     setTodos(filterTodo);
+  };
+  const handelClick = (index) => {
+    const updatedTodos = [...todos];
+    updatedTodos[index].completed = !updatedTodos[index].completed;
+    setTodos(updatedTodos);
   };
   return (
     <div>
@@ -28,7 +37,15 @@ const PracticeTodoList = () => {
           {todos.map((todo, index) => (
             <tr key={index}>
               <td>{index + 1}</td>
-              <td>{todo}</td>
+              <td>
+                <input
+                  type="checkbox"
+                  checked={todo.completed}
+                  onChange={() => handelClick(index)}
+                />
+                {todo.text}
+              </td>
+              {/* <td>{todo}</td> */}
               <td>
                 <button onClick={() => handleDeleteTodo(index)}>X</button>
               </td>
