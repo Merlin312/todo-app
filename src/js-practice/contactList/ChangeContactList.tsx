@@ -1,16 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-function ChangeContactList({ contacts, onAddContact }) {
+const ChangeContactList = ({ contacts, onAddContact }) => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
-
-  const handleNameChange = (e) => {
-    setName(e.target.value);
-  };
-
-  const handlePhoneChange = (e) => {
-    setPhone(e.target.value);
-  };
 
   const handleAddContact = () => {
     const newContact = {
@@ -19,10 +11,8 @@ function ChangeContactList({ contacts, onAddContact }) {
     };
     setName('');
     setPhone('');
-
-    onAddContact(newContact);
+    onAddContact(newContacts);
   };
-
   return (
     <div>
       <h2>Список контактів</h2>
@@ -33,22 +23,29 @@ function ChangeContactList({ contacts, onAddContact }) {
           </li>
         ))}
       </ul>
-      <h2>Додати контакт</h2>
+      <h2>Додати контакти</h2>
       <form>
         <label>
-          Ім'я:
-          <input type="text" value={name} onChange={handleNameChange} />
+          Імʼя:
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
         </label>
         <label>
-          Телефон:
-          <input type="text" value={phone} onChange={handlePhoneChange} />
+          Телефот:
+          <input
+            type="text"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
         </label>
         <button type="button" onClick={handleAddContact}>
-          Додати
+          Add
         </button>
       </form>
     </div>
   );
-}
-
+};
 export default ChangeContactList;
