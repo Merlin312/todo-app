@@ -5,59 +5,60 @@ const PracticeTodoList = () => {
   const [value, setValue] = useState('');
 
   const handleAddTodo = () => {
-    const todoItem = {
+    const newTodo = {
       text: value.trim(),
       completed: false,
     };
-    setTodos([...todos, todoItem]);
+    setTodos([...todos, newTodo]);
     setValue('');
   };
-
+  // const handleDeleteTodo = (index) => {
+  //   const newTodos = [...todos];
+  //   newTodos.splice(index, 1);
+  //   setTodos(newTodos);
+  // };
   const handleDeleteTodo = (index) => {
-    const filterTodo = todos.filter((_, i) => i !== index);
-    setTodos(filterTodo);
+    setTodos(todos.filter((_, i) => i !== index));
   };
-  const handelClick = (index) => {
-    const updatedTodos = [...todos];
-    updatedTodos[index].completed = !updatedTodos[index].completed;
-    setTodos(updatedTodos);
+  const handleClick = (index) => {
+    const updatedTodo = [...todos];
+    updatedTodo[index].completed = !updatedTodo[index].completed;
+    setTodos(updatedTodo);
   };
   return (
     <div>
-      <h1>Todo List</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Todo:</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-        <tbody>
-          {todos.map((todo, index) => (
-            <tr key={index}>
-              <td>{index + 1}</td>
-              <td>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Todo:</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        {todos.map((todo, index) => (
+          <tr key={index}>
+            <td>{index + 1}</td>
+            <td>
+              <label>
                 <input
                   type="checkbox"
                   checked={todo.completed}
-                  onChange={() => handelClick(index)}
+                  onChange={() => handleClick(index)}
                 />
                 {todo.text}
-              </td>
-              {/* <td>{todo}</td> */}
-              <td>
-                <button onClick={() => handleDeleteTodo(index)}>X</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+              </label>
+            </td>
+            <td>
+              <button onClick={() => handleDeleteTodo(index)}>X</button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
       <input
         type="text"
+        value={value}
         onChange={(event) => setValue(event.target.value)}
         placeholder="write your task.."
-        value={value}
       />
       <button onClick={handleAddTodo}>Add todo</button>
     </div>
