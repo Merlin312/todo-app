@@ -1,55 +1,51 @@
 import { useState } from 'react';
 
 const PracticeCalculator = () => {
-  const [numFirst, setNumFirtst] = useState(0);
-  const [numSecond, setNumSecond] = useState(0);
-  const [oprerator, setOprerator] = useState('+');
+  const [num1, setNum1] = useState(0);
+  const [num2, setNum2] = useState(0);
+  const [operator, setOperator] = useState('+');
   const [result, setResult] = useState(0);
 
-  const handleChangeNuFirst = (event) => {
-    setNumFirtst(Number(event.target.value));
+  const handleChangeNum1 = (event) => {
+    setNum1(Number(event.target.value));
   };
-  const handleChangeNuSecond = (event) => {
-    setNumSecond(Number(event.target.value));
+  const handleChangeNum2 = (event) => {
+    setNum2(Number(event.target.value));
   };
-
   const handleChangeOperator = (event) => {
-    setOprerator(event.target.value);
+    setOperator(event.target.value);
   };
   const handleCalculate = () => {
-    switch (oprerator) {
+    switch (operator) {
       case '+':
-        setResult(numFirst + numSecond);
-        break;
-      case '*':
-        setResult(numFirst * numSecond);
+        setResult(num1 + num2);
         break;
       case '-':
-        setResult(numFirst - numSecond);
+        setResult(num1 - num2);
+        break;
+      case '*':
+        setResult(num1 * num2);
         break;
       case '/':
-        setResult(numFirst / numSecond);
+        setResult(num1 / num2);
         break;
       default:
         setResult(0);
     }
   };
+
   return (
     <div>
       <label>
         Введіть перше число:
-        <input type="number" value={numFirst} onChange={handleChangeNuFirst} />
+        <input type="number" value={num1} onChange={handleChangeNum1} />
       </label>
       <label>
         Введіть друге число:
-        <input
-          type="number"
-          value={numSecond}
-          onChange={handleChangeNuSecond}
-        />
+        <input type="number" value={num2} onChange={handleChangeNum2} />
       </label>
       <label>
-        <select value={oprerator} onChange={handleChangeOperator}>
+        <select value={operator} onChange={handleChangeOperator}>
           <option value="+">Додавання</option>
           <option value="-">Віднімання</option>
           <option value="*">Множення</option>
