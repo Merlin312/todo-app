@@ -1,5 +1,5 @@
 import './App.css';
-import PracticeCounter from './js-practice/PracticeCounter';
+import PracticeTodoList from './js-practice/PracticeTodoList';
 
 const App = () => {
   setInterval(() => {
@@ -7,8 +7,8 @@ const App = () => {
   }, 30000);
   return (
     <div>
-      <h1>Додаток для лічильника кліків</h1>
-      <PracticeCounter intialValue={0} />
+      {/* <h1>Додаток для лічильника кліків</h1> */}
+      <PracticeTodoList />
     </div>
   );
 };
