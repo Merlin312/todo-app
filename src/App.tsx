@@ -1,11 +1,11 @@
 import './App.css';
-import PracticeForm from './js-practice/practiceForm';
+import PracticeTodo from './js-practice/PracticeTodo';
 
 const App = () => {
   return (
     <div>
       {/* <h1>Something</h1> */}
-      <PracticeForm />
+      <PracticeTodo />
     </div>
   );
 };
