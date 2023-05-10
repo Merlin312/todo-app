@@ -9,9 +9,13 @@ const PracticeTodo = () => {
     setValue('');
   };
   const handleDeleteTodo = (index) => {
-    const updatedTodos = todos.filter((_, i) => i !== index);
-    setTodos(updatedTodos);
+    const updatedTodo = todos.filter((_, i) => i !== index);
+    setTodos(updatedTodo);
   };
+
+  setInterval(() => {
+    console.clear();
+  }, 35000);
   return (
     <div>
       <table>
@@ -19,7 +23,7 @@ const PracticeTodo = () => {
           <tr>
             <th>#</th>
             <th>Todo:</th>
-            <th>Delete</th>
+            <th>X</th>
           </tr>
         </thead>
         <tbody>
@@ -35,14 +39,13 @@ const PracticeTodo = () => {
         </tbody>
       </table>
       <form onSubmit={handleAddTodo}>
-        <label>
-          <input
-            type="text"
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-          />
-          <button type="submit">Add todo</button>
-        </label>
+        <input
+          type="text"
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          placeholder="write your todo.."
+        />
+        <button type="submit">Add todo</button>
       </form>
     </div>
   );
