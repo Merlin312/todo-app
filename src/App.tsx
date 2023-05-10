@@ -1,12 +1,14 @@
 import './App.css';
-import ContactList from './js-practice/contactList/ContactList';
+import PracticeCounter from './js-practice/PracticeCounter';
 
 const App = () => {
-  const name = 'Ivan';
+  setInterval(() => {
+    console.clear();
+  }, 30000);
   return (
     <div>
-      {/* <h1>Something</h1> */}
-      <ContactList />
+      <h1>Додаток для лічильника кліків</h1>
+      <PracticeCounter intialValue={0} />
     </div>
   );
 };
