@@ -1,12 +1,12 @@
 import './App.css';
-import SayHelloName from './js-practice/SayHelloName';
+import PracticeCalculator from './js-practice/PracticeCalculator';
 
 const App = () => {
   const name = 'Ivan';
   return (
     <div>
       {/* <h1>Something</h1> */}
-      <SayHelloName name={name} />
+      <PracticeCalculator />
     </div>
   );
 };
