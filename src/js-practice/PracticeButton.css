@@ -1,0 +1,11 @@
+.btn {
+  background-color: coral;
+  font-size: 2em;
+  border: none;
+  border-radius: 2em;
+  padding: 0.5em;
+  width: 5em;
+}
+.btn:hover {
+  background-color: sandybrown;
+}
