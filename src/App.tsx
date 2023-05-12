@@ -1,5 +1,4 @@
 import './App.css';
-import PracticeTry from './practice/js-practice/PracticeTry';
 
 const App = () => {
   setInterval(() => {
@@ -7,8 +6,7 @@ const App = () => {
   }, 60000);
   return (
     <div>
-      {/* <h1>Something</h1> */}
-      <PracticeTry />
+      <h1>Something</h1>
     </div>
   );
 };
