@@ -1,14 +1,9 @@
-import React, { Component } from 'react';
+import { useEffect, useState } from 'react';
 
-class PracticeClass extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      array: [],
-    };
-  }
+const PracticeClass = () => {
+  const [array, setArray] = useState([]);
 
-  componentDidMount() {
+  useEffect(() => {
     const prom = new Promise((resolve, reject) => {
       const arr = [3, 5, 6, 2];
       if (arr.length > 0) {
@@ -19,26 +14,22 @@ class PracticeClass extends Component {
         reject('Масив пустий');
       }
     });
-
     prom
       .then((result) => {
-        this.setState({ array: result });
+        setArray(result);
       })
       .catch((error) => {
         console.error(error);
       });
-  }
+  }, []);
 
-  render() {
-    const { array } = this.state;
-    return (
-      <div>
-        {array.map((ar, index) => (
-          <li key={index}>{ar}</li>
-        ))}
-      </div>
-    );
-  }
-}
-
+  return (
+    <div>
+      {/* <h1>Helllooo</h1> */}
+      {array.map((ar, index) => (
+        <li key={index}>{ar}</li>
+      ))}
+    </div>
+  );
+};
 export default PracticeClass;
