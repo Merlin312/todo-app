@@ -354,7 +354,150 @@ render(
 );
 // Тепер у вас є коментарі для різних частин коду. Це допоможе вам зрозуміти, що робить кожна частина коду та як вони взаємодіють одна з одною в додатку на основі React та Redux.
 
+//**********************************************
+// src/actions/index.js:
+
+// Опрацьовує додавання задачі
+export const addTodo = (content) => ({
+  type: 'ADD_TODO',
+  payload: {
+    content,
+  },
+});
+
+// Опрацьовує зміну статусу задачі
+export const toggleTodo = (id) => ({
+  type: 'TOGGLE_TODO',
+  payload: {
+    id,
+  },
+});
+
+// src/reducers/todos.js:
+
+// Визначає, як змінюється стан задач
+const todos = (state = [], action) => {
+  switch (action.type) {
+    case 'ADD_TODO':
+      return [
+        ...state,
+        { id: Date.now(), content: action.payload.content, completed: false },
+      ];
+    case 'TOGGLE_TODO':
+      return state.map((todo) =>
+        todo.id === action.payload.id
+          ? { ...todo, completed: !todo.completed }
+          : todo
+      );
+    default:
+      return state;
+  }
+};
+
+export default todos;
+
+// src/reducers/index.js:
+
+import { combineReducers } from 'redux';
+import todos from './todos';
+
+// Комбінуємо редуктори
+const rootReducer = combineReducers({
+  todos,
+});
+
+export default rootReducer;
+
+// src/components/AddTodo.js:
+
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addTodo } from '../actions';
+
+const AddTodo = () => {
+  const [input, setInput] = useState('');
+  const dispatch = useDispatch();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!input.trim()) return;
+    dispatch(addTodo(input));
+    setInput('');
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+      />
+      <button type="submit">Додати задачу</button>
+    </form>
+  );
+};
+
+export default AddTodo;
+
+// src/components/Todo.js:
+
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { toggleTodo } from '../actions';
+
+const Todo = ({ todo }) => {
+  const dispatch = useDispatch();
+
+  return (
+    <li
+      onClick={() => dispatch(toggleTodo(todo.id))}
+      style={{
+        textDecoration: todo.completed ? 'line-through' : 'none',
+      }}
+    >
+      {todo.content}
+    </li>
+  );
+};
+
+export default Todo;
+
+// src/components/TodoList.js:
+
+import React from 'react';
+import { useSelector } from 'react-redux';
+import Todo from './Todo';
+
+const TodoList = () => {
+  const todos = useSelector((state) => state.todos);
+
+  return (
+    <ul>
+      {todos.map((todo) => (
+        <Todo key={todo.id} todo={todo} />
+      ))}
+    </ul>
+  );
+};
+
+export default TodoList;
+
+// src/App.js:
 
 
 
-E
+import React from 'react';
+import AddTodo from './components/AddTodo';
+import TodoList from './components/TodoList';
+
+const App = () => {
+  return (
+    <div>
+      <h1>Список задач</h1>
+      <AddTodo />
+      <TodoList />
+    </div>
+  );
+};
+
+export default App;
