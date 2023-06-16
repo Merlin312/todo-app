@@ -1,4 +1,5 @@
 import './App.css';
+import AddTodo from './practice/todo-app/components/AddTodo';
 import TodoList from './practice/todo-app/components/TodoList';
 
 const App = () => {
