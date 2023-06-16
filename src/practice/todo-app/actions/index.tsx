@@ -11,6 +11,9 @@ export const removeTodo = (id) => ({
     id, // ідентифікатор елемента todo, який потрібно видалити
   },
 });
+export const sortTodo = () => ({
+  type: 'SORT_TODO',
+});
 
 export const toggleTodo = (id) => ({
   type: 'TOGGLE_TODO', // тип дії - перемикання стану елемента todo

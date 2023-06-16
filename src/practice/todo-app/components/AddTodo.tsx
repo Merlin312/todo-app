@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addTodo } from '../actions';
+import { addTodo, sortTodo } from '../actions';
 
 const AddTodo = () => {
   const [input, setInput] = useState('');
@@ -12,6 +12,9 @@ const AddTodo = () => {
     dispatch(addTodo(input));
     setInput('');
   };
+  const handleSort = () => {
+    dispatch(sortTodo());
+  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -21,6 +24,7 @@ const AddTodo = () => {
         onChange={(e) => setInput(e.target.value)}
       />
       <button type="submit">Додати задачу</button>
+      <button onClick={handleSort}>Сортувати</button>
     </form>
   );
 };

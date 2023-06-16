@@ -6,7 +6,9 @@ const todos = (state = [], action) => {
         { id: Date.now(), content: action.payload.content, completed: false },
       ];
     case 'REMOVE_TODO':
-      return state.filter((todo) => todo.id !== action.payload.id);
+      return [...state].filter((todo) => todo.id !== action.payload.id);
+    case 'SORT_TODO':
+      return [...state].sort((a, b) => a.content.localeCompare(b.content));
     case 'TOGGLE_TODO':
       return state.map((todo) =>
         todo.id === action.payload.id
