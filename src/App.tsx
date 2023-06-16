@@ -7,7 +7,8 @@ const App = () => {
   }, 60000);
   return (
     <div>
-      <h1>Something!</h1>
+      <h1>Список задач</h1>
+      <AddTodo />
       <TodoList />
     </div>
   );
