@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { toggleTodo } from '../actions';
+import { toggleTodo, removeTodo } from '../actions';
 import './Todo.css';
 
 const Todo = ({ todo }) => {
@@ -10,18 +10,16 @@ const Todo = ({ todo }) => {
     dispatch(toggleTodo(todo.id));
   };
 
+  const handleDelete = () => {
+    dispatch(removeTodo(todo.id));
+  };
+
   return (
     <div className="todo-container">
       <li onClick={handleClick} className={todo.completed ? 'completed' : ''}>
         {todo.content}
       </li>
-      <button
-        className="delete-button"
-        onClick={(e) => {
-          e.stopPropagation();
-          // Handle delete button click
-        }}
-      >
+      <button className="delete-button" onClick={handleDelete}>
         X
       </button>
     </div>
