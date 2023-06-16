@@ -1,6 +1,7 @@
 .todo-container {
   display: flex;
   align-items: center;
+  /* padding: 4px 0 4px 0; */
 }
 
 li {
@@ -15,10 +16,16 @@ li.completed {
 
 .delete-button {
   margin-left: 10px;
+  width: 4em;
   padding: 2px 5px;
-  background-color: red;
+  background: linear-gradient(70deg, #78401a, #d53c00);
+  /* background-color: red; */
   color: white;
-  border: none;
-  border-radius: 3px;
+  /* border: none; */
+  border-radius: 10px;
   cursor: pointer;
+}
+.delete-button:hover {
+  transform: scale(1.2);
+  background: linear-gradient(70deg, #6a2b02, #e78711);
 }

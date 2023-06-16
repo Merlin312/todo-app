@@ -5,6 +5,8 @@ const todos = (state = [], action) => {
         ...state,
         { id: Date.now(), content: action.payload.content, completed: false },
       ];
+    case 'REMOVE_TODO':
+      return state.filter((todo) => todo.id !== action.payload.id);
     case 'TOGGLE_TODO':
       return state.map((todo) =>
         todo.id === action.payload.id
