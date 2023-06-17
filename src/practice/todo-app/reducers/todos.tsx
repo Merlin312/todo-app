@@ -8,15 +8,19 @@ const todos = (state = [], action) => {
     case 'REMOVE_TODO':
       return [...state].filter((todo) => todo.id !== action.payload.id);
     case 'SORT_TODO':
-      return [...state].sort((a, b) => a.content.localeCompare(b.content));
+      return [...state].sort((a, b) => b.content.localeCompare(a.content));
     case 'TOGGLE_TODO':
       return state.map((todo) =>
         todo.id === action.payload.id
           ? { ...todo, completed: !todo.completed }
           : todo
       );
-    // case 'UPPER_CASE_TODO':
-    //   return [...state].map((todo) => todo.toUpperCase());
+    case 'LOWER_CASE_TODO':
+      return state.map((todo) => ({
+        ...todo,
+        content: todo.content.toLowerCase(),
+      }));
+
     case 'UPPER_CASE_TODO':
       return state.map((todo) => ({
         ...todo,

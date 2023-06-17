@@ -24,3 +24,6 @@ export const toggleTodo = (id) => ({
 export const upperCaseTodo = () => ({
   type: 'UPPER_CASE_TODO',
 });
+export const lowerCaseTodo = () => ({
+  type: 'LOWER_CASE_TODO',
+});
