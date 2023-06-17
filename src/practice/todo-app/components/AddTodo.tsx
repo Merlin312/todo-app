@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addTodo, lowerCaseTodo, sortTodo, upperCaseTodo } from '../actions';
+import { addTodo, sortTodo } from '../actions';
 
 const AddTodo = () => {
   const [input, setInput] = useState('');
@@ -15,17 +15,10 @@ const AddTodo = () => {
   const handleSortTodo = () => {
     dispatch(sortTodo());
   };
-  const handleUpperCase = () => {
-    dispatch(upperCaseTodo());
-  };
-  const handleLowerCase = () => {
-    dispatch(lowerCaseTodo());
-  };
+
   return (
     <div>
       <button onClick={handleSortTodo}>Сортувати</button>
-      <button onClick={handleUpperCase}>UpperCase</button>
-      <button onClick={handleLowerCase}>LowerCase</button>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
