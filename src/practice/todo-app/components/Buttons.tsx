@@ -1,6 +1,7 @@
 import LowerCase from './buttons/LowerCase';
 import SortTodo from './buttons/SortTodo';
-import Theme from './buttons/Theme';
+import ThemeSlider from './buttons/ThemeSlider';
+import ThemeToggle from './buttons/ThemeToggle';
 import UpperCase from './buttons/UpperCase';
 
 const Buttons = () => {
@@ -9,7 +10,8 @@ const Buttons = () => {
       <SortTodo />
       <UpperCase />
       <LowerCase />
-      <Theme />
+      <ThemeToggle />
+      <ThemeSlider />
     </div>
   );
 };
