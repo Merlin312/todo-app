@@ -4,12 +4,12 @@
   border: none;
   border-radius: 4px;
   color: #fff;
-  background-color: #333;
+  background-color: #d4c8c8;
   cursor: pointer;
 }
 
 .theme-toggle-button.off {
-  background-color: #ccc;
+  background-color: #333;
 }
 
 .theme-toggle-button:focus {
@@ -19,12 +19,12 @@
 .theme-slider {
   display: flex;
   align-items: center;
-  margin-top: 16px;
+  margin: 16px;
 }
 
 .slider-label {
   margin-right: 8px;
-  font-size: 14px;
+  font-size: 22px;
   color: #333;
 }
 

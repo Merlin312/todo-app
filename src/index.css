@@ -1,6 +1,6 @@
 body {
   display: flex;
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
 }
 .dark-theme {
   background-color: #2e0606;
