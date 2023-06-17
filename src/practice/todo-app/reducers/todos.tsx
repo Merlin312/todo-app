@@ -15,6 +15,14 @@ const todos = (state = [], action) => {
           ? { ...todo, completed: !todo.completed }
           : todo
       );
+    // case 'UPPER_CASE_TODO':
+    //   return [...state].map((todo) => todo.toUpperCase());
+    case 'UPPER_CASE_TODO':
+      return state.map((todo) => ({
+        ...todo,
+        content: todo.content.toUpperCase(),
+      }));
+
     default:
       return state;
   }

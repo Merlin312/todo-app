@@ -21,3 +21,6 @@ export const toggleTodo = (id) => ({
     id, // ідентифікатор елемента todo, стан якого потрібно змінити
   },
 });
+export const upperCaseTodo = () => ({
+  type: 'UPPER_CASE_TODO',
+});
