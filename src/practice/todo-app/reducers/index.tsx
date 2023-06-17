@@ -3,10 +3,10 @@ import todos from './todos';
 import themes from './themes';
 
 const reducers = {
-  todos,
   themes,
+  todos,
 };
 const rootReducer = combineReducers(reducers);
-// createStore(rootReducer)
+// const store = createStore(rootReducer)
 
 export default rootReducer;
