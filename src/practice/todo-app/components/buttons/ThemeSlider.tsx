@@ -7,21 +7,21 @@ const ThemeSlider = () => {
   const dispatch = useDispatch();
 
   const handleSliderChange = (event) => {
-    const newTheme = event.target.checked ? 'on' : 'off';
-    dispatch(changeTheme(newTheme));
+    // const newTheme = event.target.checked ? 'on' : 'off';
+    dispatch(changeTheme());
     const body = document.body;
     body.classList.toggle('dark-theme');
   };
-  const color = theme === 'on' ? 'azure' : '#333';
+  const color = theme === 'off' ? 'azure' : '#333';
   return (
     <div className="theme-slider">
       <span style={{ color }} className="slider-label">
-        {theme === 'off' ? 'Light mode' : 'Dark mode'}
+        {theme === 'on' ? 'Light mode' : 'Dark mode'}
       </span>
       <label className="slider">
         <input
           type="checkbox"
-          checked={theme === 'on'}
+          // checked={theme === 'on'}
           onChange={handleSliderChange}
         />
         <span className="slider-round"></span>

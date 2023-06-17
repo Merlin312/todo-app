@@ -3,6 +3,10 @@ body {
   /* background-color: aquamarine; */
 }
 .dark-theme {
-  background-color: #2e0606;
-  color: #ffffff;
+  background-color: #200526;
+  color: rgb(207, 230, 241);
 }
+/* .light-theme {
+  background-color: antiquewhite;
+  color: #2e0606;
+} */
