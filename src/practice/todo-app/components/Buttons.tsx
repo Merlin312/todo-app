@@ -7,11 +7,11 @@ import UpperCase from './buttons/UpperCase';
 const Buttons = () => {
   return (
     <div>
+      <ThemeSlider />
       <SortTodo />
       <UpperCase />
       <LowerCase />
-      <ThemeToggle />
-      <ThemeSlider />
+      {/* <ThemeToggle /> */}
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { changeTheme } from '../../actions';
+import './ThemeToggle.css';
 
 const ThemeSlider = () => {
   const theme = useSelector((state) => state.themes);
