@@ -27,3 +27,7 @@ export const upperCaseTodo = () => ({
 export const lowerCaseTodo = () => ({
   type: 'LOWER_CASE_TODO',
 });
+
+export const changeTheme = () => ({
+  type: 'CHANGE_THEME',
+});
