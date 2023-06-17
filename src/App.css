@@ -6,20 +6,26 @@
   padding: 2rem;
   text-align: center;
 }
+/* стилі для кнопок */
 button {
   /* font-size: 18px; */
   padding: 5px 15px 5px 15px;
   margin: 0 4px;
+  font-weight: bold;
+  color: #200526;
   /* border: 1px solid rgb(1, 1, 23); */
   border: none;
   border-radius: 20px;
-  background-color: rgb(100, 35, 204);
+  background-color: rgb(158, 156, 156);
 }
 button:hover {
   scale: 1.1;
+  background-color: rgb(209, 199, 199);
 }
+/* стилі для компонента AddTodo */
 .addTodo {
   background-color: green;
+  font-weight: bold;
   /* border-radius: 50%; */
   color: azure;
   /* font-size: 2em; */

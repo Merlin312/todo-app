@@ -11,7 +11,7 @@ const ThemeSlider = () => {
     const body = document.body;
     body.classList.toggle('dark-theme');
   };
-  const color = theme === 'off' ? 'azure' : '#333';
+  const color = theme === 'on' ? 'azure' : '#333';
   return (
     <div className="theme-slider">
       <span style={{ color }} className="slider-label">

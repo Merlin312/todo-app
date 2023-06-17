@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { upperCaseTodo } from '../../actions';
 
 const UpperCase = () => {
@@ -7,6 +7,14 @@ const UpperCase = () => {
   const handleUpperCase = () => {
     dispatch(upperCaseTodo());
   };
-  return <button onClick={handleUpperCase}>UpperCase</button>;
+  const theme = useSelector((state) => state.themes);
+  const colorTextButton = theme === 'on' ? '#200526' : 'aquamarine';
+
+  return (
+    <button style={{ color: colorTextButton }} onClick={handleUpperCase}>
+      UpperCase
+    </button>
+  );
 };
+
 export default UpperCase;
