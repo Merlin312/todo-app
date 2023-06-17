@@ -25,3 +25,20 @@ button:hover {
   /* font-size: 2em; */
   width: 48px;
 }
+.addTodo:hover {
+  scale: 1.12;
+  border: 1px solid rgb(200, 217, 200);
+}
+.inp {
+  padding: 6px;
+  border: none;
+
+  border-radius: 15px;
+}
+.inp:hover {
+  scale: 1.12;
+  border: none;
+  color: azure;
+  padding: 8px;
+  background-color: #8f8e8e;
+}

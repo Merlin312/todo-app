@@ -18,10 +18,11 @@ const AddTodo = () => {
     <div>
       <form onSubmit={handleSubmit}>
         <input
+          className="inp"
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="введіть задання"
+          placeholder="введіть завдання"
         />
         <button className="addTodo" type="submit">
           +
