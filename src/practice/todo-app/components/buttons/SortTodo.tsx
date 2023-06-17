@@ -6,6 +6,13 @@ const SortTodo = () => {
   const handleSortTodo = () => {
     dispathch(sortTodo());
   };
-  return <button onClick={handleSortTodo}>Sort</button>;
+  return (
+    <button
+      // style={{ color: 'green' }}
+      onClick={handleSortTodo}
+    >
+      Sort
+    </button>
+  );
 };
 export default SortTodo;

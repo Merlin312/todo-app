@@ -7,7 +7,6 @@ const ThemeSlider = () => {
   const dispatch = useDispatch();
 
   const handleSliderChange = (event) => {
-    // const newTheme = event.target.checked ? 'on' : 'off';
     dispatch(changeTheme());
     const body = document.body;
     body.classList.toggle('dark-theme');

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addTodo } from '../actions';
+import '../../../App.css';
 
 const AddTodo = () => {
   const [input, setInput] = useState('');
@@ -20,8 +21,11 @@ const AddTodo = () => {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
+          placeholder="введіть задання"
         />
-        <button type="submit">Додати задачу</button>
+        <button className="addTodo" type="submit">
+          +
+        </button>
       </form>
     </div>
   );

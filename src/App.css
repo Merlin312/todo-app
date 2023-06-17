@@ -18,3 +18,10 @@ button {
 button:hover {
   scale: 1.1;
 }
+.addTodo {
+  background-color: green;
+  /* border-radius: 50%; */
+  color: azure;
+  /* font-size: 2em; */
+  width: 48px;
+}
