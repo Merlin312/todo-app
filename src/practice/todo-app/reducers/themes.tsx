@@ -1,7 +1,20 @@
-const themes = (state = [], action) => {
+// const themes = (state = [], action) => {
+//   switch (action.type) {
+//     case 'CHANGE_THEME':
+//       return [...state];
+//     default:
+//       return state;
+//   }
+// };
+// export default themes;
+const initialState = 'off';
+
+const themes = (state = initialState, action) => {
   switch (action.type) {
     case 'CHANGE_THEME':
-      return [...state];
+      return state === 'on' ? 'off' : 'on';
+    default:
+      return state;
   }
 };
 export default themes;
