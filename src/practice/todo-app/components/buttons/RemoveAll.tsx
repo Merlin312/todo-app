@@ -1,7 +1,14 @@
+import { useDispatch } from 'react-redux';
+import { removeAll } from '../../actions';
+
 const RemoveAll = (props) => {
   const theme = props.theme;
-  console.log(theme);
   const colorSortText = theme === 'on' ? '#200526' : 'aquamarine';
+
+  const dispatch = useDispatch();
+  const handleRemoveAllTodo = () => {
+    dispatch(removeAll());
+  };
   return (
     <button
       style={{
@@ -9,6 +16,7 @@ const RemoveAll = (props) => {
         width: '8em',
         marginTop: '4px',
       }}
+      onClick={handleRemoveAllTodo}
     >
       RemoveAll
     </button>

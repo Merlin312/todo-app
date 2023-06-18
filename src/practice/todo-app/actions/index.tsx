@@ -31,3 +31,6 @@ export const lowerCaseTodo = () => ({
 export const changeTheme = () => ({
   type: 'CHANGE_THEME',
 });
+export const removeAll = () => ({
+  type: 'REMOVE_ALL_TODO',
+});
