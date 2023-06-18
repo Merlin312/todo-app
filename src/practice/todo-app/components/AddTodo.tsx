@@ -11,7 +11,7 @@ const AddTodo = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!input.trim()) return;
-    dispatch(addTodo(input));
+    dispatch(addTodo(input, 2));
     setInput('');
   };
   const color = theme === 'on' ? '#200526' : 'aquamarine';

@@ -18,7 +18,7 @@ const Todo = ({ todo }) => {
   const color = theme === 'on' ? '#200526' : 'aquamarine';
 
   return (
-    <div className="todo-container">
+    <div className="todo-container" key={todo.id}>
       <li onClick={handleClick} className={todo.completed ? 'completed' : ''}>
         {todo.content}
       </li>

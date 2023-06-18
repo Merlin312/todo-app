@@ -8,7 +8,6 @@
 }
 .global {
   /* position: fixed; */
-  scale: 1.6;
   margin-top: 5em;
   width: 20em;
 }
@@ -25,7 +24,7 @@ button {
   background-color: rgb(158, 156, 156);
 }
 button:hover {
-  scale: 1.1;
+  transform: scale(1.1);
   background-color: rgb(209, 199, 199);
 }
 /* стилі для компонента AddTodo */
@@ -43,10 +42,11 @@ button:hover {
   vertical-align: middle;
 }
 .btnAddTodo:hover {
-  scale: 1.14;
+  transform: scale(1.14);
   border: 1px solid rgb(200, 217, 200);
   background-color: rgb(92, 126, 92);
 }
+
 .inp {
   padding: 6px;
   border: none;
@@ -57,7 +57,7 @@ button:hover {
   margin-right: 8px;
 }
 .inp:hover {
-  scale: 1.12;
+  transform: scale(1.12);
   border: none;
   color: azure;
   padding: 8px;

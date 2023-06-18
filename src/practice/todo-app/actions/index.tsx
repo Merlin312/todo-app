@@ -1,7 +1,8 @@
-export const addTodo = (content) => ({
-  type: 'ADD_TODO', // тип дії - додавання елемента todo
+export const addTodo = (content, index) => ({
+  type: 'ADD_TODO',
   payload: {
-    content, // вміст елемента todo
+    content,
+    index,
   },
 });
 
