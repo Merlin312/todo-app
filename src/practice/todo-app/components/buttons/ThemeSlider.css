@@ -4,6 +4,9 @@
   margin: 16px;
   padding-left: 6em;
 }
+.theme-slider:hover {
+  scale: 1.1;
+}
 
 .slider-label {
   margin-right: 8px;

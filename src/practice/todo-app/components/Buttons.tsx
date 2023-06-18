@@ -10,10 +10,10 @@ const Buttons = () => {
   const colorText = theme === 'off' ? 'green' : 'red';
   return (
     <div style={{ color: colorText }}>
-      <ThemeSlider />
-      <SortTodo />
-      <UpperCase />
-      <LowerCase />
+      <ThemeSlider theme={theme} />
+      <SortTodo theme={theme} />
+      <UpperCase theme={theme} />
+      <LowerCase theme={theme} />
       <RemoveAll theme={theme} />
     </div>
   );

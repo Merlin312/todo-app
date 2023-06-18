@@ -1,8 +1,8 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { sortTodo } from '../../actions';
 
-const SortTodo = () => {
-  const theme = useSelector((state) => state.themes);
+const SortTodo = (props) => {
+  const theme = props.theme;
 
   const dispathch = useDispatch();
   const handleSortTodo = () => {
