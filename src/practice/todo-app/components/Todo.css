@@ -16,7 +16,7 @@ li.completed {
 
 .delete-button {
   margin-left: 10px;
-  width: 4em;
+  width: 3.5em;
   padding: 2px 5px;
   font-weight: bold;
   background: linear-gradient(70deg, #78401a, #d53c00);

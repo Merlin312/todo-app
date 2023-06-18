@@ -17,7 +17,7 @@ const App = () => {
     <div className="global">
       <Buttons />
       <h1>Список задач</h1>
-      <AddTodo />
+      <AddTodo theme={theme} />
       <TodoList />
       <RemoveAll theme={theme} />
     </div>

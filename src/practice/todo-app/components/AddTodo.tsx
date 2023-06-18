@@ -3,9 +3,10 @@ import { useDispatch } from 'react-redux';
 import { addTodo } from '../actions';
 import '../../../App.css';
 
-const AddTodo = () => {
+const AddTodo = (props) => {
   const [input, setInput] = useState('');
   const dispatch = useDispatch();
+  const theme = props.theme;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,6 +14,7 @@ const AddTodo = () => {
     dispatch(addTodo(input));
     setInput('');
   };
+  const color = theme === 'on' ? '#200526' : 'aquamarine';
 
   return (
     <div>
@@ -24,7 +26,13 @@ const AddTodo = () => {
           onChange={(e) => setInput(e.target.value)}
           placeholder="введіть завдання"
         />
-        <button className="btnAddTodo" type="submit">
+        <button
+          style={{
+            color: color,
+          }}
+          className="btnAddTodo"
+          type="submit"
+        >
           +
         </button>
       </form>
