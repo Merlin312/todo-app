@@ -34,3 +34,6 @@ export const changeTheme = () => ({
 export const removeAll = () => ({
   type: 'REMOVE_ALL_TODO',
 });
+export const initTodos = () => ({
+  type: 'INIT_TODOS',
+});
