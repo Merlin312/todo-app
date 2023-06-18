@@ -29,28 +29,37 @@ button:hover {
   background-color: rgb(209, 199, 199);
 }
 /* стилі для компонента AddTodo */
-.addTodo {
+.btnAddTodo {
   background-color: green;
+  padding: 0;
+  /* margin-top: 100px; */
   font-weight: bold;
+  font-size: 22px;
   /* border-radius: 50%; */
   color: azure;
   /* font-size: 2em; */
   width: 48px;
+  display: inline-block;
+  vertical-align: middle;
 }
-.addTodo:hover {
-  scale: 1.12;
+.btnAddTodo:hover {
+  scale: 1.14;
   border: 1px solid rgb(200, 217, 200);
+  background-color: rgb(92, 126, 92);
 }
 .inp {
   padding: 6px;
   border: none;
-
+  background-color: #efebeb;
   border-radius: 15px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
 }
 .inp:hover {
   scale: 1.12;
   border: none;
   color: azure;
   padding: 8px;
-  background-color: #8f8e8e;
+  background-color: #c6c4c4;
 }

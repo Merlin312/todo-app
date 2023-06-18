@@ -20,9 +20,7 @@ li.completed {
   padding: 2px 5px;
   font-weight: bold;
   background: linear-gradient(70deg, #78401a, #d53c00);
-  /* background-color: red; */
   color: white;
-  /* border: none; */
   border-radius: 10px;
   cursor: pointer;
 }

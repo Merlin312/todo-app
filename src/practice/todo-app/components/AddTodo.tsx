@@ -24,7 +24,7 @@ const AddTodo = () => {
           onChange={(e) => setInput(e.target.value)}
           placeholder="введіть завдання"
         />
-        <button className="addTodo" type="submit">
+        <button className="btnAddTodo" type="submit">
           +
         </button>
       </form>
