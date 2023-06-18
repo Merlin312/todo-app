@@ -15,7 +15,7 @@ const ThemeSlider = () => {
   return (
     <div className="theme-slider">
       <span style={{ color }} className="slider-label">
-        {theme === 'on' ? 'Light mode' : 'Dark mode'}
+        {theme === 'off' ? 'Light mode' : 'Dark mode'}
       </span>
       <label className="slider">
         <input

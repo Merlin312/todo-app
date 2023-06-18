@@ -9,7 +9,7 @@ const App = () => {
   }, 60000);
 
   return (
-    <div>
+    <div className="global">
       <Buttons />
       <h1>Список задач</h1>
       <AddTodo />
