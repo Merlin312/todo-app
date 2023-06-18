@@ -11,7 +11,13 @@ const SortTodo = () => {
 
   const colorSortText = theme === 'on' ? '#200526' : 'aquamarine';
   return (
-    <button style={{ color: colorSortText }} onClick={handleSortTodo}>
+    <button
+      style={{
+        color: colorSortText,
+        width: '8em',
+      }}
+      onClick={handleSortTodo}
+    >
       Sort
     </button>
   );

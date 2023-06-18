@@ -11,7 +11,13 @@ const UpperCase = () => {
   const colorTextButton = theme === 'on' ? '#200526' : 'aquamarine';
 
   return (
-    <button style={{ color: colorTextButton }} onClick={handleUpperCase}>
+    <button
+      style={{
+        color: colorTextButton,
+        width: '8em',
+      }}
+      onClick={handleUpperCase}
+    >
       UpperCase
     </button>
   );

@@ -10,7 +10,13 @@ const LowerCase = () => {
     dispatch(lowerCaseTodo());
   };
   return (
-    <button style={{ color: colorTextButtons }} onClick={handleLowerCase}>
+    <button
+      style={{
+        color: colorTextButtons,
+        width: '8em',
+      }}
+      onClick={handleLowerCase}
+    >
       LowerCase
     </button>
   );

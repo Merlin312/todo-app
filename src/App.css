@@ -9,6 +9,7 @@
 .global {
   scale: 1.6;
   margin-top: 5em;
+  width: 20em;
 }
 /* стилі для кнопок */
 button {
