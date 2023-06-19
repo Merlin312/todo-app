@@ -24,7 +24,7 @@ const App = () => {
   return (
     <div className="global">
       <Buttons />
-      <h1>Список задач</h1>
+      <h1>Задач: {todos}</h1>
       <AddTodo theme={theme} />
       <TodoList />
       {todos >= 5 ? <RemoveAll theme={theme} /> : null}

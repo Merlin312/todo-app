@@ -5,6 +5,7 @@ import '../../../App.css';
 
 const AddTodo = (props) => {
   const [input, setInput] = useState('');
+
   const dispatch = useDispatch();
   const theme = props.theme;
 

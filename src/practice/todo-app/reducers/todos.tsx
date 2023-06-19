@@ -8,6 +8,7 @@ const todos = (state = [], action) => {
         completed: false,
       };
       const updatedState = [newTodo, ...state];
+
       localStorage.setItem('todos', JSON.stringify(updatedState));
       return updatedState;
 
