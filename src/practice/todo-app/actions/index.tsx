@@ -38,3 +38,7 @@ export const removeAll = () => ({
 export const initTodos = () => ({
   type: 'INIT_TODOS',
 });
+export const addRandomTodo = (randomTodo) => ({
+  type: 'ADD_RANDOM_TODO',
+  payload: { randomTodo },
+});

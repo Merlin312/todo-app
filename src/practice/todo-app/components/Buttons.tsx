@@ -16,7 +16,7 @@ const Buttons = () => {
       <UpperCase theme={theme} />
       <LowerCase theme={theme} />
       <RemoveAll theme={theme} />
-      <AddRandomTodo />
+      <AddRandomTodo theme={theme} />
     </div>
   );
 };

@@ -19,12 +19,22 @@ const App = () => {
 
   const theme = useSelector((state) => state.themes);
   const todos = useSelector((state) => state.todos.length);
-  // console.log(todos);
+  console.log(todos);
 
   return (
     <div className="global">
       <Buttons />
-      <h1>Задач: {todos}</h1>
+
+      <h1>
+        {todos == 0 ? '' : todos}
+        {todos >= 4
+          ? ' Завдань'
+          : todos == 1
+          ? ' Завдання'
+          : todos >= 2
+          ? ' Завдання'
+          : ' Введіть завдання'}
+      </h1>
       <AddTodo theme={theme} />
       <TodoList />
       {todos >= 5 ? <RemoveAll theme={theme} /> : null}
