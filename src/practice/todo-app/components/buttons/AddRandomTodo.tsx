@@ -1,36 +1,43 @@
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addRandomTodo } from '../../actions';
+import { addRandomTodo, hideRandomModal } from '../../actions';
+import Modal from './Modal';
 
-const AddRandomTodo = (props) => {
-  const theme = props.theme;
-  const color = theme === 'off' ? 'aquamarine' : '#200526';
-
+const AddRandomTodo = () => {
   const dispatch = useDispatch();
 
-  const random = useSelector((state) => state.randomReducer.randomTodo);
-
   const todos = useSelector((state) => state.todos);
-  const todos8 = [...todos];
+  const randomTodo = useSelector((state) => state.randomReducer.randomTodo);
+  const showModal = useSelector((state) => state.randomReducer.showModal);
 
   const handleAddRandomTodo = () => {
-    const randomTodo = todos8[Math.floor(Math.random() * todos8.length)];
+    const randomTodo = todos[Math.floor(Math.random() * todos.length)];
     dispatch(addRandomTodo(randomTodo));
   };
+
+  const handleCloseModal = () => {
+    dispatch(hideRandomModal());
+  };
+
   return (
     <div>
-      {random && random.content && <h1>{random.content}</h1>}
-      <button
-        style={{
-          marginTop: '4px',
-          color: color,
-          // fontSize: '3em',
-          // width: '8em',
-        }}
-        onClick={handleAddRandomTodo}
-      >
-        RandomTodo
+      <button onClick={handleAddRandomTodo} style={{ marginTop: '4px' }}>
+        Add Random Todo
       </button>
+      <Modal
+        show={showModal}
+        onClose={handleCloseModal}
+        onAddRandomTodo={handleAddRandomTodo}
+      >
+        {randomTodo && (
+          <div>
+            <h2>Random Todo</h2>
+            <p style={{ color: '#888' }}>{randomTodo.content}</p>
+          </div>
+        )}
+      </Modal>
     </div>
   );
 };
+
 export default AddRandomTodo;

@@ -42,3 +42,7 @@ export const addRandomTodo = (randomTodo) => ({
   type: 'ADD_RANDOM_TODO',
   payload: { randomTodo },
 });
+
+export const hideRandomModal = () => ({
+  type: 'HIDE_RANDOM_MODAL',
+});
