@@ -19,7 +19,6 @@ const App = () => {
 
   const theme = useSelector((state) => state.themes);
   const todos = useSelector((state) => state.todos.length);
-  console.log(todos);
 
   return (
     <div className="global">
