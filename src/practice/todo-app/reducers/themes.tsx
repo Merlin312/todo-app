@@ -1,9 +1,11 @@
-const initialState = 'off';
+const initialState = localStorage.getItem('theme') || 'off';
 
 const themes = (state = initialState, action) => {
   switch (action.type) {
     case 'CHANGE_THEME':
-      return state === 'on' ? 'off' : 'on';
+      const newState = state === 'on' ? 'off' : 'on';
+      localStorage.setItem('theme', newState);
+      return newState;
 
     default:
       return state;
